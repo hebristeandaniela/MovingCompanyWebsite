@@ -7,7 +7,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { db } from "../services/firebaseService";
 import type { Solutii } from "../types/solutii";
 import HeaderSolutii from "./components/HeaderSolutii";
-import Loading from "./components/Loading";
+import Loading from "../components/Loading";
 
 const Solutii = () => {
     const [data, setData] = useState<Solutii[]>([]);

@@ -1,10 +1,7 @@
-import Image from "next/image";
-import HeaderContact from "./components/HeaderContact";
-
-import Form from "./components/Form"; // Asigură-te că importi corect componenta Form
 import React from "react";
-// import TermeniSiConditii from "../termeni-si-conditii/page";
-// import TermeniSiConditii from "../termeni-si-conditii/page";
+import HeaderContact from "./components/HeaderContact";
+import Form from "./components/Form"; 
+
 const Contact = () => {
   return (
     <div className="bg-white text-gray-800">

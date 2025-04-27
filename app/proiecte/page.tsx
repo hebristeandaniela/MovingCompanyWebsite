@@ -1,13 +1,12 @@
 
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 import { collection, getDocs } from "firebase/firestore";
 import { db } from "../services/firebaseService";
 import type { Proiecte } from "../types/proiecte"; // Poți crea un tip pentru proiecte, similar cu cel pentru soluții
 import HeaderProiecte from "./components/HeaderProiecte";  // Poți crea un header pentru proiecte, similar cu cel de soluții
+import Loading from "../components/Loading";
 
 const Proiecte = () => {
     const [data, setData] = useState<Proiecte[]>([]);  // Folosim un tip pentru proiecte
@@ -34,14 +33,7 @@ const Proiecte = () => {
         fetchData();
     }, []);
 
-    if (loading) {
-        return (
-            <div className="flex flex-col justify-center items-center min-h-screen">
-                <img src="/assets/logo.jpg" alt="RoEtCo" className="w-30 h-30 mb-2" />
-                <h2 className="text-xl font-semibold">Se încarcă...</h2>
-            </div>
-        );
-    }
+    if (loading) return <Loading />;
 
     return (
         <div>

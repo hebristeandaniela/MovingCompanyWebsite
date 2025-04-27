@@ -151,7 +151,7 @@ export default function Navbar() {
                                 <ul className="flex flex-col gap-4">
                                     {solutii.map((solutie, index) => (
                                         <li key={index}>
-                                            <Link href={`/solutii/${solutie.id}`} className="hover:text-blue-500">
+                                            <Link href={`/solutii/${solutie.id}`} className="hover:text-blue-500 z-[60]">
                                                 {solutie.nume}
                                             </Link>
                                         </li>

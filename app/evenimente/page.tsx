@@ -8,6 +8,7 @@ import { db } from "../services/firebaseService";
 import MoreInfo from "./components/MoreInfo";
 import SocialM from "./components/SocialM";
 import EvenimenteList from "./components/EvenimenteList";
+import Loading from "../components/Loading";
 
 type Eveniment = {
     id?: string;
@@ -39,14 +40,8 @@ export default function Evenimente() {
         fetchData();
     }, []);
 
-    if (loading) {
-        return (
-            <div className="flex flex-col justify-center items-center min-h-screen">
-                <img src="/assets/logo.jpg" alt="RoEtCo" className="w-30 h-30 mb-2" />
-                <h2 className="text-xl font-semibold">Se încarcă...</h2>
-            </div>
-        );
-    }
+    if (loading) return <Loading />;
+
 
     return (
         <div>

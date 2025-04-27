@@ -118,7 +118,7 @@ const SolutiiPage = () => {
                 <div className="space-y-6">
                     {/* câmpuri input */}
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Nume</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Nume Soluție</label>
                         <input
                             type="text"
                             value={nume}
@@ -128,7 +128,7 @@ const SolutiiPage = () => {
                         />
                     </div>
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">ID</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">ID unic</label>
                         <input
                             type="text"
                             value={id}
@@ -159,7 +159,7 @@ const SolutiiPage = () => {
                     </div>
 
                     <div>
-                        <label className="block text-sm font-medium text-gray-700 mb-1">Descriere Scurtă</label>
+                        <label className="block text-sm font-medium text-gray-700 mb-1">Titlu soluției care apare pe Pagina de detalii</label>
                         <textarea
                             value={descriereScurta}
                             onChange={(e) => setDescriereScurta(e.target.value)}
@@ -183,7 +183,7 @@ const SolutiiPage = () => {
                         {sectiuni.map((sec, index) => (
                             <div
                                 key={index}
-                                className="bg-gray-50 p-4 rounded-lg mb-4 border border-gray-200 space-y-4"
+                                className="bg-blue-100 p-4 rounded-lg mb-4 border border-gray-800 space-y-4"
                             >
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 mb-1">Titlu serviciu:</label>
@@ -199,7 +199,6 @@ const SolutiiPage = () => {
                                     />
                                 </div>
 
-                                {/* Descrieri */}
                                 {[1, 2, 3].map((num) => (
                                     <div key={num}>
                                         <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -216,8 +215,37 @@ const SolutiiPage = () => {
                                         />
                                     </div>
                                 ))}
+
+                                {/* Buton pentru ștergere serviciu */}
+                                {sectiuni.length > 1 && (
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            const updated = [...sectiuni];
+                                            updated.splice(index, 1);
+                                            setSectiuni(updated);
+                                        }}
+                                        className="text-red-600 mt-2 hover:underline"
+                                    >
+                                        Șterge acest serviciu
+                                    </button>
+                                )}
                             </div>
                         ))}
+
+                        {/* Buton pentru adăugare serviciu nou */}
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setSectiuni([
+                                    ...sectiuni,
+                                    { titlu: "", descriere1: "", descriere2: "", descriere3: "" },
+                                ])
+                            }
+                            className="mt-4 bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-lg font-semibold transition"
+                        >
+                            + Adaugă un alt serviciu
+                        </button>
                     </div>
 
                     <button

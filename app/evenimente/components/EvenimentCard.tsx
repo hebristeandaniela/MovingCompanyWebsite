@@ -1,4 +1,5 @@
-// components/EvenimentCard.tsx
+
+import Link from "next/link";
 import React from "react";
 
 type Eveniment = {
@@ -20,6 +21,15 @@ const EvenimentCard = ({ eveniment }: { eveniment: Eveniment }) => {
                 <h3 className="text-xl font-semibold text-[#0D0D0D]">{eveniment.titlu}</h3>
                 <p className="text-sm text-gray-800 mt-2">{eveniment.descriere}</p>
               
+            </div>
+            <div className="mt-1 flex justify-end">
+                {eveniment.id ? (
+                    <Link href={`/evenimente/${eveniment.id}`} className="text-blue-600 hover:underline mt-4 font-medium">
+                        Vezi detalii
+                    </Link>
+                ) : (
+                    <p className="text-red-500 mt-4">ID indisponibil</p>
+                )}
             </div>
         </div>
     );
