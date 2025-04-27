@@ -49,7 +49,7 @@ const StatisticsSection = () => {
             className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition"
           >
             <h2 className="text-4xl font-bold text-gray-800">
-              <CountUp end={stat.value} duration={2} />
+              <CountUp end={stat.value} />
             </h2>
             <p className="mt-2 text-sm font-medium text-gray-600">
               {stat.label}
