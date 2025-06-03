@@ -75,7 +75,7 @@ export default function Header() {
                             target="_blank"
                             className="bg-primary hover:bg-primary/90 transition text-white font-medium px-6 py-3 rounded-lg"
                         >
-                            WhatsApp Test
+                            WhatsApp
                         </Link>
                         <Link
                             href="/contact"

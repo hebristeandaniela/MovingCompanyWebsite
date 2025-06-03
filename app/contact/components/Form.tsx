@@ -105,7 +105,7 @@ const Form = () => {
           value={formData.user_name}
           onChange={handleChange}
           required
-          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <input
@@ -115,7 +115,7 @@ const Form = () => {
           value={formData.user_email}
           onChange={handleChange}
           required
-          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <input
@@ -125,7 +125,7 @@ const Form = () => {
           value={formData.subject}
           onChange={handleChange}
           required
-          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <textarea
@@ -135,7 +135,7 @@ const Form = () => {
           value={formData.message}
           onChange={handleChange}
           required
-          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="w-full border border-gray-300 rounded-lg p-3 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
 
         <label className="flex items-center space-x-2">
