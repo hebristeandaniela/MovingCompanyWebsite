@@ -39,7 +39,7 @@ export default function Header() {
         // Setăm intervalul pentru schimbarea cardurilor
         const interval = setInterval(() => {
             setCurrentIndex((prev) => (prev + 1) % rotatingCards.length); // Îl facem ciclic
-        }, 3000); // La fiecare 3 secunde
+        }, 5000); // La fiecare 3 secunde
 
         // Curățăm intervalul la demontarea componentului
         return () => clearInterval(interval);
@@ -75,7 +75,7 @@ export default function Header() {
                             target="_blank"
                             className="bg-primary hover:bg-primary/90 transition text-white font-medium px-6 py-3 rounded-lg"
                         >
-                            WhatsApp
+                            WhatsApp Test
                         </Link>
                         <Link
                             href="/contact"
