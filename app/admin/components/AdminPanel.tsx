@@ -5,6 +5,7 @@ import ProiectePage from "./ProiectePage";
 import EventsPage from "./evenimente";
 import DesprePage from "./DesprePage";
 import HomePage from "./HomePage";
+import ContactPage from "./ContactPage";
 
 const AdminPanel = () => {
     const [activePage, setActivePage] = useState("home");
@@ -22,6 +23,8 @@ const AdminPanel = () => {
                 return <EventsPage />;
             case "despre":
                 return <DesprePage />;
+            case "contact":
+                return <ContactPage />;
             default:
                 return <div className="text-2xl font-semibold text-gray-800">Bine ai venit în panoul de administrare!</div>;
         }
@@ -59,7 +62,8 @@ const AdminPanel = () => {
                     <button onClick={() => handleNavClick("proiecte")} className={navButtonStyle("proiecte")}>Proiecte</button>
                     <button onClick={() => handleNavClick("evenimente")} className={navButtonStyle("evenimente")}>Evenimente</button>
                     <button onClick={() => handleNavClick("despre")} className={navButtonStyle("despre")}>Despre</button>
-                </nav>
+                    <button onClick={() => handleNavClick("contact")} className={navButtonStyle("contact")}>Contact</button>
+              </nav>
             </aside>
 
             {/* Overlay Mobile */}
