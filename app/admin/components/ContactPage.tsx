@@ -2,7 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { db } from "../../services/firebaseService";
-import { collection, doc, getDoc, getDocs, updateDoc } from "firebase/firestore";
+import { doc, getDoc, updateDoc } from "firebase/firestore";
+
 
 const ContactPage = () => {
     const [loading, setLoading] = useState(true);
@@ -11,6 +12,7 @@ const ContactPage = () => {
     const [adresa, setAdresa] = useState("");
     const [telefon, setTelefon] = useState("");
     const [email, setEmail] = useState("");
+
 
     useEffect(() => {
         const fetchContact = async () => {
@@ -44,6 +46,23 @@ const ContactPage = () => {
         });
 
         alert("Informațiile de contact au fost actualizate cu succes!");
+    };
+
+    const [text, setText] = useState('');
+    const docRef = doc(db, 'gdpr', 'termeni&conditii');
+
+    useEffect(() => {
+        const load = async () => {
+            const snap = await getDoc(docRef);
+            if (snap.exists()) setText(snap.data().continut || '');
+            setLoading(false);
+        };
+        load();
+    }, []);
+
+    const save = async () => {
+        await updateDoc(docRef, { continut: text });
+        alert('Salvat!');
     };
 
     if (loading) return <div className="p-6 text-gray-600">Se încarcă...</div>;
@@ -110,9 +129,18 @@ const ContactPage = () => {
                 Salvează
             </button>
 
-            <h1 className="text-2xl sm:text-3xl font-bold mb-8 text-black mt-20 text-center">
-                Administrează Pagina "GDPR"
-            </h1>
+                <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-black mt-20 text-center">
+                    Administrează Pagina "GDPR"
+                </h1>
+                <h1 className="text-xl font-bold mb-8 text-center">Editează Termeni și Condiții</h1>
+                <textarea
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    className="w-full h-96 p-4 border bg-white border-gray-300 rounded whitespace-pre-line"
+                />
+                <button onClick={save} className="mt-4 bg-blue-600 text-white px-4 py-2 rounded">
+                    Salvează
+                </button>
             
         </div>
     );
