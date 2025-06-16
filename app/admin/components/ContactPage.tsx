@@ -12,7 +12,10 @@ const ContactPage = () => {
     const [adresa, setAdresa] = useState("");
     const [telefon, setTelefon] = useState("");
     const [email, setEmail] = useState("");
-
+    const [linkedin, setLinkedin] = useState("");
+    const [facebook, setFacebook] = useState("");
+    const [instagram, setInstagram] = useState("");
+    const [tiktok, setTiktok] = useState("");
 
     useEffect(() => {
         const fetchContact = async () => {
@@ -26,6 +29,10 @@ const ContactPage = () => {
                 setAdresa(data.adresa);
                 setTelefon(data.telefon);
                 setEmail(data.email);
+                setLinkedin(data.linkedin || "");
+                setFacebook(data.facebook || "");
+                setInstagram(data.instagram || "");
+                setTiktok(data.tiktok || "");
             }
 
             setLoading(false);
@@ -43,6 +50,10 @@ const ContactPage = () => {
             adresa,
             telefon,
             email,
+            linkedin,
+            facebook,
+            instagram,
+            tiktok,
         });
 
         alert("Informațiile de contact au fost actualizate cu succes!");
@@ -122,6 +133,46 @@ const ContactPage = () => {
                 />
             </div>
 
+            {/* 👇 blocul pentru social media 👇 */}
+                        <div className="mb-6">
+                            <label className="block text-base font-semibold mb-1">LinkedIn:</label>
+                            <input
+                                type="text"
+                                value={linkedin}
+                                onChange={(e) => setLinkedin(e.target.value)}
+                                className="w-full p-3 border bg-white border-gray-300 rounded"
+                            />
+                        </div>
+
+                        <div className="mb-6">
+                            <label className="block text-base font-semibold mb-1">Facebook:</label>
+                            <input
+                                type="text"
+                                value={facebook}
+                                onChange={(e) => setFacebook(e.target.value)}
+                                className="w-full p-3 border bg-white border-gray-300 rounded"
+                            />
+                        </div>
+
+                        <div className="mb-6">
+                            <label className="block text-base font-semibold mb-1">Instagram:</label>
+                            <input
+                                type="text"
+                                value={instagram}
+                                onChange={(e) => setInstagram(e.target.value)}
+                                className="w-full p-3 border bg-white border-gray-300 rounded"
+                            />
+                        </div>
+
+                        <div className="mb-6">
+                            <label className="block text-base font-semibold mb-1">TikTok:</label>
+                            <input
+                                type="text"
+                                value={tiktok}
+                                onChange={(e) => setTiktok(e.target.value)}
+                                className="w-full p-3 border bg-white border-gray-300 rounded"
+                            />
+                        </div>
             <button
                 onClick={handleSave}
                 className="mt-6 w-full sm:w-auto px-6 py-3 bg-green-600 text-white rounded hover:bg-green-700 transition"

@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import React from 'react'
+import { db } from "../services/firebaseService";
+import { doc, getDoc } from 'firebase/firestore';
 import StatisticsSection from "./StatisticsSection";
 
 export default function SocialMediaSection() {
