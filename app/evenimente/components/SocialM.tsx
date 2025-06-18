@@ -1,8 +1,26 @@
-import React from "react";
-import Image from "next/image";
+'use client'
+
+import Link from 'next/link'
+import Image from 'next/image'
+import React, { useEffect, useState } from 'react'
+import { db } from "../../services/firebaseService";
+import { doc, getDoc } from 'firebase/firestore'
 
 const SocialM = () => {
-    return (
+    const [facebook, setFacebook] = useState('#') // fallback
+
+    useEffect(() => {
+        const fetchFacebook = async () => {
+            const docRef = doc(db, 'contact', 'detalii')
+            const docSnap = await getDoc(docRef)
+            if (docSnap.exists()) {
+                setFacebook(docSnap.data().facebook || '#')
+            }
+        }
+
+        fetchFacebook()
+    }, [])
+     return (
         <section className="relative w-full max-w-7xl mx-auto mt-5 -mb-14 px-4 flex flex-col lg:flex-row items-center gap-[65px] lg:h-[510px]">
             <div className="flex flex-col lg:flex-row justify-center items-center gap-[30px] lg:gap-[76px] w-full">
                 {/* Titlu si Textul Descriere */}
@@ -17,7 +35,7 @@ const SocialM = () => {
                     {/* Butonul Join Us */}
                     <div className="flex justify-center items-center bg-[#007AFF] rounded-[8px] w-[149px] h-[55px]">
                         <a
-                            href="https://www.facebook.com/RoEtCoInternational"
+                            href={facebook}
                             target="_blank"
                             className="text-white text-[16px] sm:text-[18px] font-semibold"
                         >

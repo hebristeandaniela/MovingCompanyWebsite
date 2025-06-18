@@ -78,15 +78,14 @@ const ProiectePage = () => {
     };
 
     return (
-        <div className="p-4 sm:p-6 bg-gray-100 min-h-screen">
+        <div className="p-4 mt-10 sm:p-6 bg-gray-100 min-h-screen">
             {successMessage && (
                 <div className="fixed top-10 left-1/2 transform -translate-x-1/2 mt-10 w-[90%] sm:w-1/2 bg-green-500 text-center p-4 rounded-lg shadow-lg transition-all duration-500 ease-in-out border-green-700 z-50">
                     <span className="font-semibold text-lg text-white">{successMessage}</span>
                 </div>
             )}
-
-            <h1 className="text-3xl sm:text-4xl font-bold mt-10 mb-5 text-gray-900 text-center">
-                PANOU ADMINISTRATOR PROIECTE
+            <h1 className="text-4xl text-center font-bold text-blue-700 mb-6">
+                Administrează Pagina "Proiecte"
             </h1>
 
             <form

@@ -61,9 +61,11 @@ const DesprePage = () => {
     if (!despreData) return <div className="p-6 text-gray-600">Se încarcă...</div>;
 
     return (
-        <div className="px-4 sm:px-6 lg:px-8 py-8 max-w-4xl mx-auto text-gray-800">
-            <h1 className="text-2xl sm:text-3xl font-bold mb-8 text-black mt-20 text-center">Administrează Pagina "Despre"</h1>
-
+        <div className="px-4 mt-10 sm:px-6 lg:px-8 py-8 max-w-4xl mx-auto text-gray-800">
+            <h1 className="text-4xl text-center font-bold text-blue-700 mb-6">
+                Administrează Pagina "Despre"
+            </h1>
+         
             {/* Titlu */}
             <div className="mb-6">
                 <label className="block text-base font-semibold text-black mb-1">Titlu:</label>

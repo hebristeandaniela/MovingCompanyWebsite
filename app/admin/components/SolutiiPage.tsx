@@ -99,15 +99,14 @@ const SolutiiPage = () => {
     };
 
     return (
-        <div className="p-4 sm:p-6 bg-gray-50 min-h-screen">
+        <div className="p-4 mt-10 sm:p-6 bg-gray-50 min-h-screen">
             {successMessage && (
                 <div className="fixed top-10 left-1/2 transform -translate-x-1/2 w-[90%] sm:w-1/2 bg-green-500 text-center p-4 rounded-lg shadow-lg transition-all duration-500 ease-in-out border-green-700 z-50">
                     <span className="font-semibold text-lg text-white">{successMessage}</span>
                 </div>
             )}
-
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 text-center py-6 sm:py-10">
-                PANOU ADMINISTRATOR SOLUȚII
+            <h1 className="text-4xl text-center font-bold text-blue-700 mb-6">
+                PANOU ADMINISTRARE SOLUȚII
             </h1>
 
             <form

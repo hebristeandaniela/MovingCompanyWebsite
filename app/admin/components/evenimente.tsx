@@ -192,9 +192,9 @@ const EventsPage = () => {
     if (!evenimentData) return <div className="p-8 text-gray-600">Încărcare...</div>;
 
     return (
-        <div className="p-4 sm:p-6 md:p-8 max-w-7xl mx-auto">
-            <h1 className="text-2xl md:text-3xl font-bold mt-8 md:mt-10 mb-6 text-gray-800 text-center md:text-left">
-                Administrare Evenimente
+        <div className="p-4 mt-10 sm:p-6 md:p-8 max-w-7xl mx-auto">
+            <h1 className="text-4xl text-center font-bold text-blue-700 mb-6">
+                Administrează Pagina "Evenimente"
             </h1>
 
             {/* Adaugă eveniment nou */}

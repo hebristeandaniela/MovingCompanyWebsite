@@ -44,7 +44,7 @@ const AdminPanel = () => {
             {/* Top Bar Mobile */}
             <div className="md:hidden fixed mt-20 left-0 right-0 z-30 bg-white border-b shadow px-4 py-4 flex items-center justify-between">
                 <button onClick={() => setSidebarOpen(!sidebarOpen)} className="text-2xl font-bold text-blue-600">
-                    ☰
+                    ☰Admin
                 </button>
                 <span className="text-lg font-semibold">Panou Admin</span>
             </div>

@@ -18,7 +18,7 @@ const Page = () => {
         return <div>Loading...</div>;
     }
 
-    if (key !== "admin123") {
+    if (key !== "Zt9rQ6Lm82VxB4Ny") {
         return <div className="text-red-600 font-bold text-center mt-20 text-2xl">Acces interzis</div>;
     }
 
