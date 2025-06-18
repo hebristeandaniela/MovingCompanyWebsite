@@ -1,8 +1,37 @@
-import React from "react";
+'use client'
+
+import React, { useEffect, useState } from 'react'
+import { db } from '../services/firebaseService'
+import { doc, getDoc } from 'firebase/firestore'
 import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+    const [links, setLinks] = useState({
+        facebook: '',
+        instagram: '',
+        tiktok: '',
+        linkedin: '',
+    })
+
+    useEffect(() => {
+        const fetchLinks = async () => {
+            const docRef = doc(db, 'contact', 'detalii')
+            const docSnap = await getDoc(docRef)
+            if (docSnap.exists()) {
+                const data = docSnap.data()
+                setLinks({
+                    facebook: data.facebook || '',
+                    instagram: data.instagram || '',
+                    tiktok: data.tiktok || '',
+                    linkedin: data.linkedin || '',
+                })
+            }
+        }
+
+        fetchLinks()
+    }, []) 
+    
     return (
         
         <footer className="bg-[#002C52]">
@@ -15,16 +44,30 @@ export default function Footer() {
                         </Link>
                         <p>Implementăm soluții avansate <br />de cablare structurată, administrare <br /> servere și mentenanță IT.</p>
                         
-                        <div className="flex flex-wrap gap-10 mt-14">
-                            <Link href="/">
-                                <Image width={39} height={33} src="/assets/facebook.png" alt="facebook" />
-                            </Link>
-                            <Link href="/" className="mt-1">
-                                <Image width={32} height={30} src="/assets/instagram.png" alt="instagram" />
-                            </Link>
-                            <Link href="/">
-                                <Image width={39} height={33} src="/assets/tiktok.png" alt="TikTok" />
-                            </Link>
+                        <div className="flex flex-wrap gap-3 mt-14">
+                            {links.linkedin && (
+                                <Link href={links.linkedin} target="_blank">
+                                    <Image width={38} height={32} src="/assets/linkedinwhite.svg" alt="LinkedIn" />
+                                </Link>
+                            )}
+                            
+                            {links.facebook && (
+                                <Link href={links.facebook} target="_blank">
+                                    <Image width={38} height={33} src="/assets/facebookwhite.svg" alt="facebook" />
+                                </Link>
+                            )}
+
+                            {links.instagram && (
+                                <Link href={links.instagram} target="_blank" className="mt-0.5">
+                                    <Image width={37} height={33} src="/assets/instagramwhite.svg" alt="instagram" />
+                                </Link>
+                            )}
+
+                            {links.tiktok && (
+                                <Link href={links.tiktok} target="_blank">
+                                    <Image width={38} height={33} src="/assets/tiktokwhite.svg" alt="TikTok" />
+                                </Link>
+                            )}
                         </div>
                     </div>
                     
@@ -32,7 +75,7 @@ export default function Footer() {
                         <h3 className="mb-8 text-lg font-semibold">MENIU</h3>
                         <div className="flex flex-col gap-3">
                             <Link href="/">Acasă</Link>
-                            <Link href="/solutii">Solutii</Link>
+                            <Link href="/solutii">Soluții</Link>
                             <Link href="/proiecte">Proiecte</Link>
                             <Link href="/evenimente">Evenimente</Link>
                             <Link href="/despre">Despre</Link>
@@ -43,7 +86,7 @@ export default function Footer() {
                     <div className="w-full md:w-1/3 lg:w-4/12">
                         <div className="flex mb-8 gap-2 lg:text-lg lg:font-semibold">
                             <Image width={20} height={10} src="/assets/LocationMarker.png" alt='LocationMarker' />
-                            <h3 className="">Locația Noastră</h3>
+                            <h3>Locația Noastră</h3>
                         </div>
                         <div className="w-full lg:flex-1 py-1 lg:py-0">
                             <Link href="https://maps.app.goo.gl/AyUiRiL4zd1nLMdq6">
