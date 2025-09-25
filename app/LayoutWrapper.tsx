@@ -8,13 +8,12 @@ import { ReactNode } from "react";
 
 export default function LayoutWrapper({ children }: { children: ReactNode }) {
     const pathname = usePathname();
-    const isAdmin = pathname.startsWith("/admin");
 
     return (
         <>
              <Navbar /> <NavbarTel />
             {children}
-            {!isAdmin && <Footer />}
+             <Footer />
         </>
     );
 }

@@ -1,8 +1,6 @@
 'use client'
 
 import React, { useEffect, useState } from 'react'
-import { db } from '../services/firebaseService'
-import { doc, getDoc } from 'firebase/firestore'
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,37 +12,20 @@ export default function Footer() {
         linkedin: '',
     })
 
-    useEffect(() => {
-        const fetchLinks = async () => {
-            const docRef = doc(db, 'contact', 'detalii')
-            const docSnap = await getDoc(docRef)
-            if (docSnap.exists()) {
-                const data = docSnap.data()
-                setLinks({
-                    facebook: data.facebook || '',
-                    instagram: data.instagram || '',
-                    tiktok: data.tiktok || '',
-                    linkedin: data.linkedin || '',
-                })
-            }
-        }
-
-        fetchLinks()
-    }, []) 
+    
     
     return (
         
-        <footer className="bg-[#002C52]">
+        <footer className="bg-[#0a3c5c]">
            
             <div className="container mx-auto px-20 text-white">
                 <div className="flex flex-wrap justify-center pt-24 pb-12 gap-12 ml-10">
                     <div className="w-full md:w-1/2 lg:w-4/12 px-4 lg:mb-0">
-                        <Link href="/" className="inline-block mb-10">
-                            <Image width={100} height={55} src="/assets/Logo_ROetCO.jpg" alt="footer" />
+                        <Link href="/" className="inline-block mb-5">
+                            <Image width={300} height={300} src="/assets/Logo_Corey.png" alt="footer" />
                         </Link>
-                        <p>Implementăm soluții avansate <br />de cablare structurată, administrare <br /> servere și mentenanță IT.</p>
                         
-                        <div className="flex flex-wrap gap-3 mt-14">
+                        <div className="flex flex-wrap items-center gap-3 ml-14">
                             {links.linkedin && (
                                 <Link href={links.linkedin} target="_blank">
                                     <Image width={38} height={32} src="/assets/linkedinwhite.svg" alt="LinkedIn" />
@@ -72,26 +53,24 @@ export default function Footer() {
                     </div>
                     
                     <div className="w-full md:w-1/4 lg:w-2/12 px-4 mb-16 lg:mb-0">
-                        <h3 className="mb-8 text-lg font-semibold">MENIU</h3>
+                        <h3 className="mb-8 text-lg font-semibold">MENU</h3>
                         <div className="flex flex-col gap-3">
-                            <Link href="/">Acasă</Link>
-                            <Link href="/solutii">Soluții</Link>
-                            <Link href="/proiecte">Proiecte</Link>
-                            <Link href="/evenimente">Evenimente</Link>
-                            <Link href="/despre">Despre</Link>
-                            <Link href="/contact">Contact</Link>
+                            <Link href="/">Home</Link>
+                            <Link href="/services">Services</Link>
+                            <Link href="/aboutus">About Us</Link>
+                            <Link href="/">Payment</Link>
+                            <Link href="/">Moving Day</Link>
+                            <Link href="/">Contact</Link>
                         </div>
                     </div>
                    
                     <div className="w-full md:w-1/3 lg:w-4/12">
                         <div className="flex mb-8 gap-2 lg:text-lg lg:font-semibold">
                             <Image width={20} height={10} src="/assets/LocationMarker.png" alt='LocationMarker' />
-                            <h3>Locația Noastră</h3>
+                            <h3>Our Location</h3>
                         </div>
                         <div className="w-full lg:flex-1 py-1 lg:py-0">
-                            <Link href="https://maps.app.goo.gl/AyUiRiL4zd1nLMdq6">
-                                <Image width={340} height={219} src="/assets/location.jpeg" alt='location' />
-                            </Link>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d154466.8347433396!2d-71.33335778919209!3d43.99650761110317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb309d1f5c0d125%3A0x1b169d905b98b116!2sConway%2C%20New%20Hampshire!5e0!3m2!1sro!2sus!4v1758391898360!5m2!1sro!2sus" width="400" height="300" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
@@ -100,7 +79,7 @@ export default function Footer() {
                 <div className="border-b border-[#CCCCCC]"></div>
             </div>
             <p className="text-[#999999] py-8 md:pb-8 text-sm text-center">
-                ©Copyright. All rights reserved to RO ET CO INTERNATIONAL.
+                Website built by Daniela Hebristean.
             </p>
         </footer>
     );

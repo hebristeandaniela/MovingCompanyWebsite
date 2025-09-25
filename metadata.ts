@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "RO ET CO",
-  description: "Site Web RO ET CO INTERNATIONAL",
+  title: "Mountain Men Movers",
+  description: "Site Web Mountain Men Movers",
 };

@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@phosphor-icons/react": "^2.1.10",
     "firebase": "^11.4.0",
     "firebase-admin": "^13.2.0",
+    "framer-motion": "^12.23.16",
     "lucide-react": "^0.479.0",
     "next": "15.1.7",
     "protobufjs": "^7.4.0",

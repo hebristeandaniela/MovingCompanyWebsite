@@ -1,58 +1,116 @@
-'use client'; 
-import React, { useEffect, useState } from "react";
-import HeaderContact from "./components/HeaderContact";
-import Form from "./components/Form"; 
-import { db } from "../services/firebaseService";
-import { collection, getDocs } from "firebase/firestore"; 
+'use client'
 
-const fetchContactData = async () => {
-  const querySnapshot = await getDocs(collection(db, 'contact'));
-   return querySnapshot.docs.map(doc => doc.data());
-};
+import { useEffect, useState } from "react";
+const faqs = [
+  {
+    question: "How do I get a quote?",
+    answer:
+      "Just send us your name, phone number, and a brief description of your move. We’ll get back to you ASAP with a free quote—no commitment required until a contract is signed.",
+  },
+  {
+    question: "Do you offer free quotes?",
+    answer:
+      "Yes! All quotes are 100% free. You’re not committed to anything until we finalize the details together.",
+  },
+  {
+    question: "What’s the best way to contact you?",
+    answer:
+      "You can call us at 603-726-0345 or email mountainmenmover@gmail.com. We respond quickly and personally.",
+  },
+  {
+    question: "Are you a local business?",
+    answer:
+      "Yes! We’re proudly based in Conway, NH, right in the heart of Mt. Washington Valley. We’re neighbors first, movers second.",
+  },
+  {
+    question: "Do you give back to the community?",
+    answer:
+      "Absolutely. As we grow, we’re committed to giving back to the people we serve. Follow us to see how we support our local community!",
+  },
+];
 
-const Contact = () => {
-  const [contactData, setContactData] = useState<any>(null);
+
+export default function ContactCTA() {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [navHeight, setNavHeight] = useState(0);
 
   useEffect(() => {
-    fetchContactData().then(data => setContactData(data[0]));
+    const isMobile = window.innerWidth < 1024; // Tailwind breakpoint lg
+    const navbar = isMobile
+      ? document.getElementById("mobile-navbar")
+      : document.getElementById("main-navbar");
+
+    if (navbar) {
+      setNavHeight(navbar.offsetHeight);
+    }
   }, []);
-
-  if (!contactData) return <div>Loading...</div>; 
-
+  
   return (
-    <div className="bg-white text-gray-800">
-    {/* HEADER */}
-    <HeaderContact />
+    <section style={{ marginTop: `${navHeight}px`, }} className="grid  grid-cols-1 lg:grid-cols-2">
+      {/* Left column */}
+      <div className="bg-[#007a9f] text-white p-10 flex flex-col justify-center">
+        <h2 className="text-3xl font-bold mb-4 text-[#f4b88d]">
+          Ready to move? <br /> We're here to help.
+        </h2>
+        <p className="mb-6 max-w-md">
+          We don’t just move boxes—we move families, memories, and new
+          beginnings. Let us take the weight off your shoulders and help you
+          settle into your next season.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <a
+            href=""
+            target="_blank"
+            className="bg-white text-[#007a9f] px-6 py-3 rounded-lg font-semibold shadow hover:bg-[#f4b88d] hover:text-white transition"
+          >
+            Request a Quote
+          </a>
+          <a
+            href="tel:6037260345"
+            className="bg-green-600 text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-green-700 transition"
+          >
+            Call Us: 603-726-0345
+          </a>
 
-    {/* MAP & CONTACT INFO */}
-    <section className="py-16 px-6 md:px-20 flex flex-col lg:flex-row gap-12 items-start">
-      {/* MAP */}
-        <div className="w-full lg:w-1/2 aspect-video rounded-xl shadow-md overflow-hidden">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d169.87130624121542!2d21.926745588316486!3d47.06100966096111!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x474647de469d1fb3%3A0xb7c16530cfd52e42!2sRO%20ET%20CO%20INTERNATIONAL%20S.A.!5e0!3m2!1sro!2sro!4v1744658993433!5m2!1sro!2sro" className="w-full h-full border-0"
-            loading="lazy"
-            allowFullScreen ></iframe>
+
+
+        </div>        
+        <p className="text-white mt-5 max-w-md">
+            Prefer email? Reach us at{" "}
+            <a
+              href="mailto:mountainmenmover@gmail.com"
+              className="underline text-[#f4b88d] hover:text-white transition"
+            >
+              mountainmenmover@gmail.com
+            </a>
+          </p>
       </div>
 
-      {/* CONTACT INFO */}
-      <div className="w-full lg:w-1/2 space-y-5">
-          <h2 className="text-3xl font-bold">{contactData.titlu}</h2>
-        <p className="text-gray-600">{contactData.descriere}  </p>
-        <div className="space-y-2 text-lg">
-            <p><strong>📍 Adresă:</strong> {contactData.adresa}</p>
-            <p><strong>📞 Telefon:</strong> {contactData.telefon}</p>
-            <p><strong>✉ Email:</strong> {contactData.email}</p>
+      {/* Right column (FAQ) */}
+      <div className="bg-[#f2f4f5] text-black p-10">
+        <h3 className="text-2xl font-semibold mb-6">Frequently Asked Questions</h3>
+        <div className="space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="border rounded-lg bg-white shadow-sm"
+            >
+              <button
+                className="w-full flex justify-between items-center p-4 font-medium text-left"
+                onClick={() =>
+                  setOpenIndex(openIndex === index ? null : index)
+                }
+              >
+                {faq.question}
+                <span>{openIndex === index ? "−" : "+"}</span>
+              </button>
+              {openIndex === index && (
+                <div className="p-4 border-t bg-gray-50">{faq.answer}</div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </section>
-
-    {/* CONTACT FORM */}
-    <section className="bg-white py-16 px-6 md:px-20">
-      <div className="max-w-4xl mx-auto bg-gray-50 p-10 rounded-2xl shadow-md">
-        <Form />
-      </div>
-    </section>
-  </div>
-);
-};
-
-export default Contact;
+  );
+}

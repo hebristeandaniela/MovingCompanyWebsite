@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import LayoutWrapper from "./LayoutWrapper"; // 👈 adaugă importul
+import LayoutWrapper from "./LayoutWrapper"; 
 import { ReactNode } from "react";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "RO ET CO",
-  description: "Site Web RO ET CO INTERNATIONAL",
+  title: "Mountain Men Movers",
+  description: "Mountain Men Movers",
 };
 
 export default function RootLayout({

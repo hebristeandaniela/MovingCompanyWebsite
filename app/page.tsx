@@ -1,14 +1,17 @@
-import Image from "next/image";
+
 import Header from "./components/Header";
-import SocialMediaSection from "./components/SocialMediaSection";
-import EvenimentSection from "./components/EvenimentSection";
+import AboutUsSection from "./components/AboutUsSection";
+import ServiceSection from "./components/ServiceSection";
+import FeaturesSection from "./components/FeaturesSection";
 
 export default function Home() {
     return (
         <div>
-        <Header />
-        <SocialMediaSection/>   
-        <EvenimentSection/>
+            <Header />
+            <FeaturesSection />  
+            <ServiceSection />  
+            <AboutUsSection />  
+
         </div>
     );
 }
