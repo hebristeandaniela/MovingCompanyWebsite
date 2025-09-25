@@ -82,11 +82,16 @@ export default function Header() {
                         </Link>
                     </motion.div>
 
-                    <motion.div variants={{ hidden: { y: 20, opacity: 0 }, visible: { y: 0, opacity: 1 } }}>
-                    <a
-                            href="tel:603-726-0345"
-                        className="px-8 py-3 bg-[#28a745] text-white rounded-full hover:bg-green-900 transition"
+                    <motion.div
+                        variants={{
+                            hidden: { y: 20, opacity: 0 },
+                            visible: { y: 0, opacity: 1 },
+                        }}
                     >
+                        <a
+                            href="tel:603-726-0345"
+                            className="block w-full sm:w-auto text-center px-6 sm:px-8 py-3 bg-[#28a745] text-white rounded-full hover:bg-green-900 transition"
+                        >
                             CALL US: 603-726-0345
                         </a>
                     </motion.div>
