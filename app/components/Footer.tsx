@@ -54,9 +54,9 @@ export default function Footer() {
                         <Link href="/">Home</Link>
                         <Link href="/services">Services</Link>
                         <Link href="/aboutus">About Us</Link>
-                        <Link href="/">Payment</Link>
-                        <Link href="/">Moving Day</Link>
-                        <Link href="/">Contact</Link>
+                        <Link href="/payment">Payment</Link>
+                        <Link href="/moving">Moving Day</Link>
+                        <Link href="/contact">Contact</Link>
                     </div>
                 </div>
 

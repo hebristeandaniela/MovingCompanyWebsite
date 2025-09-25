@@ -22,7 +22,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* Meniu Desktop / Tableta */}
-                <div className="flex items-center gap-[clamp(0.5rem,1.3vw,2rem)] text-[clamp(0.5rem,1.3vw,2rem)] font-semibold text-[#181818] font-sans">
+                <div className="hidden md:flex flex-wrap items-center gap-6 text-lg font-semibold text-[#181818] font-sans">
                     <Link href="/" className="hover:text-blue-600 transition-colors">Home</Link>
                     <Link href="/servicess" className="hover:text-blue-600 transition-colors">Services</Link>
                     <Link href="/aboutus" className="hover:text-blue-600 transition-colors">About Us</Link>
