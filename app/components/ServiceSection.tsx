@@ -7,7 +7,7 @@ import React, { useEffect, useState } from 'react'
 export default function ServiceSection() {
 
     return (
-        <section className="bg-white py-8 sm:py-12">
+        <section className="bg-white py-10 sm:py-12">
 
             {/* Hero Section */}
             <div
@@ -42,26 +42,26 @@ export default function ServiceSection() {
             </div>
 
             {/* What We Offer */}
-            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-8 justify-center items-start mt-10">
+            <div className="max-w-screen-xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 justify-center items-start mt-10">
 
                 {/* Image */}
-                <div className="flex justify-center lg:justify-start">
+                <div className="flex justify-center">
                     <img
                         width={300}
                         height={300}
                         src="/assets/corey1.png"
                         alt="Mountain Men Movers Truck"
-                        className="h-auto max-w-xs sm:max-w-md rounded-2xl shadow-lg"
+                        className="h-auto sm:max-w-md rounded-2xl shadow-lg"
                     />
                 </div>
 
                 {/* Text & Services */}
-                <div className="flex flex-col items-center lg:items-start">
+                <div className="flex flex-col items-center">
                     <h2 className="uppercase text-2xl sm:text-3xl font-bold text-[#0a3c5c] mb-6 text-center lg:text-left">
                         What We Offer
                     </h2>
 
-                    <div className="flex flex-col gap-4 w-full max-w-md">
+                    <div className="flex flex-col w-full">
                         {[
                             { icon: "🚚", title: "Local & Long-Distance Moving", desc: "Whether it’s across town or across the country, we deliver safely and swiftly." },
                             { icon: "🏢", title: "Business Relocation", desc: "We move your workspace so you can stay focused on your business." },
