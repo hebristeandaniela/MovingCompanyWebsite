@@ -59,7 +59,7 @@ export default function ContactCTA() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4">
           <a
-            href=""
+            href="/requestQuote"
             target="_blank"
             className="bg-white text-[#007a9f] px-6 py-3 rounded-lg font-semibold shadow hover:bg-[#f4b88d] hover:text-white transition"
           >
@@ -74,7 +74,8 @@ export default function ContactCTA() {
 
 
 
-        </div>        
+        </div>  
+
         <p className="text-white mt-5 max-w-md">
             Prefer email? Reach us at{" "}
             <a
@@ -84,6 +85,21 @@ export default function ContactCTA() {
               mountainmenmover@gmail.com
             </a>
           </p>
+
+
+{/* Yelp button (secondary CTA) */}
+        {/* Yelp button */}
+        <div className="mt-4">
+          <a
+            href="https://www.yelp.com/biz/mountain-men-movers-conway"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#a32525] text-white px-6 py-3 rounded-lg font-semibold shadow hover:bg-[#801616] transition inline-block"
+          >
+            ★ Read Our Reviews on Yelp
+          </a>
+        </div>
+
       </div>
 
       {/* Right column (FAQ) */}

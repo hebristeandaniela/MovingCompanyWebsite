@@ -68,7 +68,7 @@ export default function PaymentOptions() {
                         className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition"
                     >
                         <div className="flex justify-center mb-4">{pay.icon}</div>
-                        <h3 className="text-xl font-semibold mb-2">{pay.title}</h3>
+                        <h3 className="text-black text-xl font-semibold mb-2">{pay.title}</h3>
                         <p className="text-gray-600 text-sm">{pay.description}</p>
                     </div>
                 ))}

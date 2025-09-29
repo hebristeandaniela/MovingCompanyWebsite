@@ -158,15 +158,13 @@ const requestQuote = () => {
                     We offer free quotes and honest service—because that’s how neighbors treat each other.</p>
 
                         <a
-                            href="tel:4053084447"
-                            className="inline-block md:w-2/5 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition"
+                    href="tel:603-726-0345"
+                            className="inline-block bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-700 transition"
                         >
-                            📞 CALL US: 405-308-4447
+                    📞 CALL US: 603-726-0345
                         </a>
                     </div>
 
-
-            {/* Right Side - Form */}
             {/* Right Side - Form */}
             <form
                 ref={form}
@@ -204,7 +202,7 @@ const requestQuote = () => {
                     <option value="Cold Call">Cold Call</option>
                     <option value="Google Search">Google Search</option>
                     <option value="Facebook">Facebook</option>
-                    <option value="Instagram">Instagram</option>
+                    <option value="Yelp">Yelp</option>
                     <option value="Referral">Referral</option>
                     <option value="Returning Customer">Returning Customer</option>
                 </select>

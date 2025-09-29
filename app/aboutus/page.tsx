@@ -80,7 +80,7 @@ export default function AboutUs() {
                         wherever we can. Follow us to see how we give back as we grow!
                     </p>
                     <a
-                        href="https://www.instagram.com/yourcompany"
+                        href="https://www.facebook.com/share/15kvvMn7ra/?mibextid=wwXIfr"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-block bg-yellow-200 text-blue-900 font-semibold px-6 py-3 rounded-full hover:bg-yellow-300 transition"
