@@ -84,7 +84,7 @@ export default function Footer() {
         <p className="text-[#999999] py-6 text-sm text-center">
             Website built by{' '}
             <a
-                href="https://portfolio-git-main-hebristeandanielas-projects.vercel.app/"
+                href="https://portfolio-beta-orpin-cr9e23t2k3.vercel.app/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#999999] hover:text-white underline transition-colors"
