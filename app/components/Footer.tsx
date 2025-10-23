@@ -82,7 +82,15 @@ export default function Footer() {
         </div>
 
         <p className="text-[#999999] py-6 text-sm text-center">
-            Website built by Daniela Hebristean.
+            Website built by{' '}
+            <a
+                href="https://portfolio-git-main-hebristeandanielas-projects.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#999999] hover:text-white underline transition-colors"
+            >
+                Daniela Hebristean
+            </a>.
         </p>
     </footer>);
 }
